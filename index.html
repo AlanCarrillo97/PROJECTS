@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas y Respuestas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Preguntas</h1>
+    <a href="{{ url_for('nueva_pregunta') }}">Nueva Pregunta</a>
+    <ul>
+        {% for pregunta in preguntas %}
+            <li>
+                <h2>{{ pregunta.titulo }}</h2>
+                <p>{{ pregunta.descripcion }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
